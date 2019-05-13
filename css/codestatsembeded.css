@@ -1,74 +1,82 @@
 html,
 body {
-	width: 100%;
-	margin: 0px;
+  width: 100%;
+  margin: 0px;
 }
 
 .container {
-	margin: auto;
-	width: 70%;
+  margin: auto;
+  width: 70%;
 }
 
 #codestatsembed {
-	font-family: "Fira Sans", "Arial", sans-serif;
-	margin: auto;
-	margin-top: 50px;
-	max-width: 900px;
-	height: auto;
-	border: 1px solid lightgray;
-	padding: 3px;
-	display: flex;
-	flex-direction: column;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  margin: auto;
+  margin-top: 50px;
+  max-width: 900px;
+  height: auto;
+  border: 1px solid lightgray;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
 }
 
-#codestatembed>h4 {
-	font-size: 1.333rem;
-	line-height: 1.2;
-	font-weight: 300;
+#codestatembed > h4 {
+  font-size: 1.333rem;
+  line-height: 1.2;
+  font-weight: 300;
 }
 
 .top-container {
-	width: 100%;
-	display: flex;
+  width: 100%;
+  display: flex;
+  padding-top: 5px;
+  overflow: hidden;
 }
 
 .bottom-container {
-	height: 20px;
-	width: auto;
-	text-align: right;
-	margin: 10px;
-	padding: 3px;
-	border-top: 1px solid lightgray;
+  height: 20px;
+  width: auto;
+  text-align: right;
+  margin: 10px;
+  padding: 3px;
+  border-top: 1px solid lightgray;
 }
 
-.bottom-container>small {
-	color: #303030;
-	font-style: italic;
+.bottom-container > small {
+  color: #303030;
+  font-style: italic;
 }
 
 .codestats-colum-left {
-	width: 50%;
-	float: left;
+  width: 50%;
+  float: left;
+}
+
+.column-title {
+  font-family: "Segoe UI";
+  text-align: center;
+  margin: 0px;
+  padding-top: 0px;
 }
 
 .separator {
-	float: right;
-	border-left: 1px solid lightgray;
+  float: right;
+  border-left: 1px solid lightgray;
 }
 
 .codestats-colum-right {
-	width: 50%;
-	float: right;
-	padding: 10px;
-}
-
-.codestats-colum-right>h2 {
-	margin: 0px;
-	padding-top: 0px;
+  width: 50%;
+  float: right;
+  padding: 5px;
+  padding-left: 10px;
 }
 
 .total-progress {
-	font-size: 0.8rem;
+  font-size: 0.8rem;
+}
+#myChart {
+  margin-top: 20px;
 }
 
 /*.codestats-progressbar {
@@ -94,4 +102,3 @@ div.progress-bar>span.total-progress {
 	transform: translate(-50%, -50%);
 	color: #000;
 }*/
-ñ
