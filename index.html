@@ -5,114 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Example</title>
-    <link rel="stylesheet" href="css/codestatsembeded.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="dist/codestatsembedded.min.css" />
   </head>
   <body>
     <div class="container">
-      <div id="codestatsembed">
-        <div class="top-container year-xps">
-          <div class="codestats-colum-left">
-            <h2 class="column-title">Experience per month</h2>
-            <canvas id="myChart" width="100%" height="56"></canvas>
-          </div>
-          <div class="separator"></div>
-          <div class="codestats-colum-right">
-            <h2 class="column-title">Top Languages</h2>
-            <section class="top-languages">
-              <div>
-                <div class="combined-level-progress">
-                  <h4 class="level-counter"><strong class="level-prefix">Blade</strong><span class="total-xp"> level 6 (68,743&nbsp;XP)</span><span class="recent-xp"></span></h4>
-                  <div class="progress-bar">
-                    <span class="progress progress-old" role="progressbar" aria-valuetext="Level progress 54 %." style="width: 54%;"></span
-                    ><span class="progress progress-recent" role="progressbar" aria-valuetext="Recent level progress 0 %." aria-hidden="true" style="width: 10%;"></span
-                    ><span class="total-progress" aria-hidden="true">54&nbsp;%</span>
-                  </div>
-                </div>
-                <div class="combined-level-progress">
-                  <h4 class="level-counter"><strong class="level-prefix">PHP</strong><span class="total-xp"> level 5 (54,417&nbsp;XP)</span><span class="recent-xp"></span></h4>
-                  <div class="progress-bar">
-                    <span class="progress progress-old" role="progressbar" aria-valuetext="Level progress 82 %." style="width: 82%;"></span
-                    ><span class="progress progress-recent" role="progressbar" aria-valuetext="Recent level progress 0 %." aria-hidden="true" style="width: 0%;"></span
-                    ><span class="total-progress" aria-hidden="true">82&nbsp;%</span>
-                  </div>
-                </div>
-                <div class="combined-level-progress">
-                  <h4 class="level-counter"><strong class="level-prefix">sqf</strong><span class="total-xp"> level 5 (50,599&nbsp;XP)</span><span class="recent-xp"></span></h4>
-                  <div class="progress-bar">
-                    <span class="progress progress-old" role="progressbar" aria-valuetext="Level progress 60 %." style="width: 60%;"></span
-                    ><span class="progress progress-recent" role="progressbar" aria-valuetext="Recent level progress 0 %." aria-hidden="true" style="width: 0%;"></span
-                    ><span class="total-progress" aria-hidden="true">60&nbsp;%</span>
-                  </div>
-                </div>
-                <div class="combined-level-progress">
-                  <h4 class="level-counter"><strong class="level-prefix">C#</strong><span class="total-xp"> level 4 (32,486&nbsp;XP)</span><span class="recent-xp"> (+2)</span></h4>
-                  <div class="progress-bar">
-                    <span class="progress progress-old" role="progressbar" aria-valuetext="Level progress 48 %." style="width: 48%;"></span
-                    ><span class="progress progress-recent" role="progressbar" aria-valuetext="Recent level progress 0 %." aria-hidden="true" style="width: 0%;"></span
-                    ><span class="total-progress" aria-hidden="true">48&nbsp;%</span>
-                  </div>
-                </div>
-                <div class="combined-level-progress">
-                  <h4 class="level-counter"><strong class="level-prefix">HTML</strong><span class="total-xp"> level 4 (28,365&nbsp;XP)</span><span class="recent-xp"> (+415)</span></h4>
-                  <div class="progress-bar stacked">
-                    <span class="progress progress-old" role="progressbar" aria-valuetext="Level progress 19 %." style="width: 16%;"></span
-                    ><span class="progress progress-recent" role="progressbar" aria-valuetext="Recent level progress 3 %." aria-hidden="false" style="width: 3%;"></span
-                    ><span class="total-progress" aria-hidden="true">19&nbsp;%</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-        <div class="bottom-container">
-          <small>📄 Stats retrived from <a href="https://codestats.net">codestats.net</a> using 💻 <a href="https://github.com/byjokese/code-stats-embeded">code-stats-embeded</a> by @byjokese</small>
-        </div>
-      </div>
+      <div id="mycontainer"></div>
     </div>
-    <script src="js/codestasembed.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="dist/codestatsembedded.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
-      var ctx = $("#myChart");
-      var lineChart = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          datasets: [
-            {
-              data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 1500, 221, 783],
-              label: "Blade",
-              borderColor: "#3e95cd",
-              fill: false
-            },
-            {
-              data: [282, 350, 411, 502, 635, 809, 947, 1402, 1200, 1600, 947, 1402],
-              label: "PHP",
-              borderColor: "#8e5ea2",
-              fill: false
-            },
-            {
-              data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734, 203, 276],
-              label: "SQF",
-              borderColor: "#3cba9f",
-              fill: false
-            },
-            {
-              data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784, 408, 547],
-              label: "C#",
-              borderColor: "#e8c3b9",
-              fill: false
-            },
-            {
-              data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433, 947, 1402],
-              label: "HTML",
-              borderColor: "#c45850",
-              fill: false
-            }
-          ]
-        }
-      });
+      CodeStatsEmbed("#mycontainer", "by-jokese");
     </script>
   </body>
 </html>
