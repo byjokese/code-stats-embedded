@@ -4,6 +4,8 @@
 
 Everybody loves stats. So why not to share them where ever you want?
 
+<img align="center" src="https://screenshots.byjokese.com/2019/05/firefox_2019-05-14_17-28-45.jpg"/>
+
 # ☁️ Installation
 
 Add the following code to your html:
