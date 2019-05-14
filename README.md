@@ -9,8 +9,8 @@ Everybody loves stats. So why not to share them where ever you want?
 Add the following code to your html:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/byjokese/code-stats-embedded@v1.0/dist/codestatsembedded.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/byjokese/code-stats-embedded@v1.0/dist/codestatsembedded.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/byjokese/code-stats-embedded@latest/dist/codestatsembedded.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/byjokese/code-stats-embedded@latest/dist/codestatsembedded.min.js"></script>
 <script>
   CodeStatsEmbed("ContainerSelector", "username");
 </script>
