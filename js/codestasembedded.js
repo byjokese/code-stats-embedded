@@ -135,52 +135,55 @@ function setupLanguages(languages) {
       .appendTo(progressBar);
   }
 }
+
 /**
  * [setupDates Sets the HTML with the data loaded from param]
  * @param  {[JSON]} dates [Array containing dates and experience]
  */
 function setupDates(dates) {
-  var lastMonth = dates[dates.length - 1]["date"].slice(5, 7);
-  function findFirstMonth(element) {
-    return element["date"].slice(5, 7) > lastMonth;
-  }
-  var indexFirstMonth = dates.findIndex(findFirstMonth);
-  dates = dates.slice(indexFirstMonth, dates.length - 1);
-  //Calculate the total for each month
-  var monthValues = [];
-  var monthNumbers = [];
-  var previusMonth = dates[0]["date"].slice(5, 7);
-  var monthTotal = 0;
-  var i;
-  for (i = 0; i < dates.length; i++) {
-    var currentMonth = dates[i]["date"].slice(5, 7);
-    if (previusMonth === currentMonth) {
-      monthTotal += dates[i]["value"];
-    } else {
-      monthValues.push(monthTotal);
-      monthNumbers.push(previusMonth);
-      previusMonth = currentMonth;
-      monthTotal = dates[i]["value"];
+    var lastMonth = dates[dates.length - 1]["date"].slice(5, 7);
+    function findFirstMonth(element) {
+        return element["date"].slice(5, 7) > lastMonth;
     }
-  }
-  monthValues.push(monthTotal);
-  monthNumbers.push(previusMonth);
-  //Proccess Months Names
-  var monthLabels = processMonthNumbers(monthNumbers);
-  new Chart($("#myChart"), {
-    type: "line",
-    data: {
-      labels: monthLabels,
-      datasets: [
-        {
-          data: monthValues,
-          label: "XP",
-          borderColor: "#3e95cd",
-          fill: true
+    var indexFirstMonth = dates.findIndex(findFirstMonth);
+    if (indexFirstMonth === -1)
+        indexFirstMonth = 1;
+    dates = dates.slice(indexFirstMonth, dates.length - 1);
+    //Calculate the total for each month
+    var monthValues = [];
+    var monthNumbers = [];
+    var previusMonth = dates[0]["date"].slice(5, 7);
+    var monthTotal = 0;
+    var i;
+    for (i = 0; i < dates.length; i++) {
+        var currentMonth = dates[i]["date"].slice(5, 7);
+        if (previusMonth === currentMonth) {
+            monthTotal += dates[i]["value"];
+        } else {
+            monthValues.push(monthTotal);
+            monthNumbers.push(previusMonth);
+            previusMonth = currentMonth;
+            monthTotal = dates[i]["value"];
         }
-      ]
     }
-  });
+    monthValues.push(monthTotal);
+    monthNumbers.push(previusMonth);
+    //Proccess Months Names
+    var monthLabels = processMonthNumbers(monthNumbers);
+    new Chart($("#myChart"), {
+        type: "line",
+        data: {
+            labels: monthLabels,
+            datasets: [
+                {
+                    data: monthValues,
+                    label: "XP",
+                    borderColor: "#3e95cd",
+                    fill: true
+                }
+            ]
+        }
+    });
 }
 /**
  * [loadData Retrieves the data from Codes::Stats API for inserted username]
@@ -202,7 +205,7 @@ function loadData(username) {
     });
     setupLanguages(languages);
     //Procress Data from dates
-    var dates = [];
+      var dates = [];
     for (var date in data["dates"]) {
       dates.push({ date: date, value: data["dates"][date] });
     }
